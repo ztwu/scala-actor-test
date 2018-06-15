@@ -33,20 +33,31 @@ object ActorDemo {
 
     actor1.start()
     //发送异步消息
-//    actor1.!("你好1")
-//    actor1.!("你好2")
-//    actor1.!("你好3")
-//    actor1.!("你好4")
-//    actor1.!("你好5")
+//    val reply1 = actor1.!("你好1")
+//    println(reply1)
+//    val reply2 = actor1.!("你好2")
+//    println(reply2)
+//    val reply3 = actor1.!("你好3")
+//    println(reply3)
+//    val reply4 = actor1.!("你好4")
+//    println(reply4)
+//    val reply5 = actor1.!("你好5")
+//    println(reply5)
 
     //发送同步消息
-    actor1 !? ("你好2")
-    actor1 !? ("你好3")
-    actor1 !? ("你好4")
-    actor1 !? ("你好5")
-    actor1 !? ("你好1")
+    val reply2 = actor1 !? ("你好2")
+    println(reply2)
+    val reply3 = actor1 !? ("你好3")
+    println(reply3)
+    val reply4 = actor1 !? ("你好4")
+    println(reply4)
+    val reply5 = actor1 !? ("你好5")
+    println(reply5)
+    val reply1 = actor1 !? ("你好1")
+    println(reply1)
 
     //发送异步消息，异步发送一个消息，但是在后续要获得消息的返回值
+    //!!操作符发送的消息会返回一个对象(future)，该对象可以稍后处理，也可以发送给其他Actor。
 //    val future1  = actor1 !! ("你好1")
 //    val reply = future1()
 //    println(reply)
